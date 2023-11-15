@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class browserlanuch {
 	public static void main(String args[]) throws InterruptedException {
@@ -36,6 +37,22 @@ public class browserlanuch {
 		email2.sendKeys("aditi.singh@abc.com");
 		WebElement password = driver.findElement(By.xpath("//input[@id = 'password_step_input']"));
 		password.sendKeys("Ashi@2804");
+		WebElement daydrop = driver.findElement(By.id("day"));
+		Select s  = new Select(daydrop);
+		s.selectByVisibleText("28"); //select visible text
+		WebElement monthdrop = driver.findElement(By.id("month"));
+		Select m  = new Select(monthdrop);
+		m.selectByIndex(3); // select index value dropdown
+		WebElement yeardrop = driver.findElement(By.id("year"));
+		Select n  = new Select(yeardrop);
+		n.selectByValue("1999"); //select value
+		WebElement gender = driver.findElement(By.xpath("//input[@name = 'sex']"));
+		gender.click();
+		//WebElement signup = driver.findElement(By.name("websubmit"));
+		//signup.click();		
+		
+		
+		
 		
 	}
 
