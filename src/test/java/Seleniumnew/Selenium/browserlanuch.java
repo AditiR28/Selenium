@@ -5,9 +5,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver.Options;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class browserlanuch {
@@ -34,6 +36,13 @@ public class browserlanuch {
 		//co.setBinary("C:\\Users\\Aditi\\Downloads\\chrome-win32\\chrome-win32\\chrome.exe");
 		
 		//login method
+		// drop down handling code
+				Actions ac = new Actions(driver);
+				for (int i = 0;i<5;i=i+1 );
+				{
+					ac.sendKeys(Keys.TAB).perform();
+					Thread.sleep(2000);
+				}
 		WebElement user = driver.findElement(By.id("email"));
 		user.sendKeys("xyz@abc.com");
 		WebElement userpass = driver.findElement(By.xpath("//input[@name='pass']"));
@@ -63,6 +72,7 @@ public class browserlanuch {
 		n.selectByValue("1999"); //select value
 		WebElement gender = driver.findElement(By.xpath("//input[@name = 'sex']"));
 		gender.click();
+		
 		//WebElement signup = driver.findElement(By.name("websubmit"));
 		//signup.click();		
 		
